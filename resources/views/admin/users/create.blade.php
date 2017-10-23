@@ -8,9 +8,9 @@
     <h1>Create Users</h1>
 
 
-    {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store']) !!}
+    {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store','files'=>true]) !!}
 
- {{csrf_field()}}
+    {{csrf_field()}}
 
 
         <div class="form-group">
@@ -50,21 +50,35 @@
 
 
         <div class="form-group">
-                   {!! Form::label('password','Password:') !!}
-                   {!! Form::password('password', ['class'=>'form_control']) !!}
-           </div>
-
-
-        <div class="form-group">
-            {!! Form::submit('Create User', ['class'=>'btn btn-primary']) !!}
-
+            {!! Form::label('password','Password:') !!}
+            {!! Form::password('password', ['class'=>'form_control']) !!}
         </div>
 
 
-      {!! Form::close() !!}
+    <div class="form-group">
+        {!! Form::submit('Create User', ['class'=>'btn btn-primary']) !!}
+
+    </div>
 
 
-    @include('includes.form_error')
+    {!! Form::close() !!}
+
+
+
+    <div class="row">
+
+
+        @include('includes.form_error')
+
+
+
+
+</div>
+
+
+
+
+
 
 
 
